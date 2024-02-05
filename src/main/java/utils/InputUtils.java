@@ -1,4 +1,4 @@
-package edu.lab1.utils;
+package utils;
 
 import java.util.Scanner;
 

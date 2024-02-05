@@ -2,7 +2,7 @@ package edu.lab1.encoder;
 
 import edu.lab1.models.Table;
 import java.util.Scanner;
-import static edu.lab1.utils.InputUtils.getScanner;
+import static utils.InputUtils.getScanner;
 import static utils.PrintUtils.print;
 import static utils.PrintUtils.println;
 import static utils.RandomUtils.getRandomSuffix;
