@@ -13,7 +13,7 @@ public final class DecoderDialog {
     }
 
     private static Table table;
-    private static String cipherText;
+    private static String ciphertext;
     private static String key;
 
     public static DecoderDialogResult startDialogAndGetResult() {
@@ -22,10 +22,10 @@ public final class DecoderDialog {
 
         Scanner scanner = getScanner();
         createTable(scanner);
-        createCipherText(scanner);
+        createCiphertext(scanner);
         createKey(scanner);
 
-        return new DecoderDialogResult(table, cipherText, key);
+        return new DecoderDialogResult(table, ciphertext, key);
     }
 
     private static void createTable(Scanner scanner) {
@@ -38,14 +38,14 @@ public final class DecoderDialog {
         table = new Table(width, height);
     }
 
-    private static void createCipherText(Scanner scanner) {
+    private static void createCiphertext(Scanner scanner) {
         println("");
         print("Введите шифротекст из " + table.getSize() + " символов: ");
 
         while (true) {
-            cipherText = getUserInput(scanner);
+            ciphertext = getUserInput(scanner);
 
-            if (cipherText.length() != table.getSize()) {
+            if (ciphertext.length() != table.getSize()) {
                 println("Шифротекст должен содержать " + table.getSize() + " символов. ");
                 print("Введите шифротекст: ");
             } else {

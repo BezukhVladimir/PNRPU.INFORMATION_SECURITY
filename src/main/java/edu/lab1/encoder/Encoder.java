@@ -8,27 +8,27 @@ public final class Encoder {
     private Encoder() {
     }
 
-    public static String encodeAndGetCipherText(
-        Table table, String plainText, String key
+    public static String encodeAndGetCiphertext(
+        Table table, String plaintext, String key
     ) {
-        return getCiphertext(table, plainText, getColOrder(key));
+        return getCiphertext(table, plaintext, getColOrder(key));
     }
 
-    public static String getCiphertext(Table table, String plainText, List<Integer> colOrder) {
+    public static String getCiphertext(Table table, String plaintext, List<Integer> colOrder) {
         StringBuilder sb = new StringBuilder();
 
         for (int index : colOrder) {
-            sb.append(getCol(table, plainText, index));
+            sb.append(getCol(table, plaintext, index));
         }
 
         return sb.toString();
     }
 
-    private static String getCol(Table table, String plainText, int index) {
+    private static String getCol(Table table, String plaintext, int index) {
         StringBuilder sb = new StringBuilder();
 
         for (int row = 0; row < table.getHeight(); ++row) {
-            sb.append(plainText.charAt(row * table.getWidth() + index));
+            sb.append(plaintext.charAt(row * table.getWidth() + index));
         }
 
         return sb.toString();

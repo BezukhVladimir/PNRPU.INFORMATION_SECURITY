@@ -14,7 +14,7 @@ public final class EncoderDialog {
     }
 
     private static Table table;
-    private static String plainText;
+    private static String plaintext;
     private static String key;
 
     public static EncoderDialogResult startDialogAndGetResult() {
@@ -23,10 +23,10 @@ public final class EncoderDialog {
 
         Scanner scanner = getScanner();
         createTable(scanner);
-        createPlainText(scanner);
+        createPlaintext(scanner);
         createKey(scanner);
 
-        return new EncoderDialogResult(table, plainText, key);
+        return new EncoderDialogResult(table, plaintext, key);
     }
 
     private static void createTable(Scanner scanner) {
@@ -39,13 +39,13 @@ public final class EncoderDialog {
         table = new Table(width, height);
     }
 
-    private static void createPlainText(Scanner scanner) {
+    private static void createPlaintext(Scanner scanner) {
         println("");
         println("Вы можете зашифровать не более " + table.getSize() + " символов.");
         println("Не оставляйте в исходном тексте подсказки о его структуре (пробелы, знаки препинания и т. д.).");
         print("Введите исходный текст: ");
-        plainText = getUserInput(scanner);
-        adjustPlainText();
+        plaintext = getUserInput(scanner);
+        adjustPlaintext();
     }
 
     private static void createKey(Scanner scanner) {
@@ -55,34 +55,34 @@ public final class EncoderDialog {
         adjustKey();
     }
 
-    private static void adjustPlainText() {
-        if (plainText.length() > table.getSize()) {
-            trimPlainText();
-        } else if (plainText.length() < table.getSize()) {
-            expandPlainText();
+    private static void adjustPlaintext() {
+        if (plaintext.length() > table.getSize()) {
+            trimPlaintext();
+        } else if (plaintext.length() < table.getSize()) {
+            expandPlaintext();
         }
     }
 
-    private static void trimPlainText() {
+    private static void trimPlaintext() {
         println("");
         println("Исходный текст содержит более " + table.getSize() + " символов.");
         println("С конца исходного текста были удалены лишние символы.");
 
-        plainText = plainText.substring(0, table.getSize());
+        plaintext = plaintext.substring(0, table.getSize());
 
-        println("Итоговый исходный текст: " + plainText);
+        println("Итоговый исходный текст: " + plaintext);
         println("");
     }
 
-    private static void expandPlainText() {
+    private static void expandPlaintext() {
         println("");
         println("Исходный текст содержит менее " + table.getSize() + " символов.");
         println("В конец исходного текста были добавлены случайные символы.");
 
-        int suffixLength = table.getSize() - plainText.length();
-        plainText = plainText + getRandomSuffix(suffixLength);
+        int suffixLength = table.getSize() - plaintext.length();
+        plaintext = plaintext + getRandomSuffix(suffixLength);
 
-        println("Итоговый исходный текст: " + plainText);
+        println("Итоговый исходный текст: " + plaintext);
         println("");
     }
 

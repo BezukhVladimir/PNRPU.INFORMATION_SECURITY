@@ -4,7 +4,7 @@ import edu.lab1.models.Table;
 
 public record EncoderDialogResult(
     Table table,
-    String plainText,
+    String plaintext,
     String key
 ) {
 }

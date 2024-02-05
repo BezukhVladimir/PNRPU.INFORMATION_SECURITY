@@ -1,7 +1,7 @@
 package edu.lab1.models;
 
 /*
- *   plainText: helloworld**
+ *   plaintext: helloworld**
  *   --> |hel|
  *   --> |low|
  *   --> |orl|

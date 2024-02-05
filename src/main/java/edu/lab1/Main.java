@@ -2,8 +2,8 @@ package edu.lab1;
 
 import edu.lab1.decoder.DecoderDialog;
 import edu.lab1.encoder.EncoderDialog;
-import static edu.lab1.decoder.Decoder.decodeAndGetPlainText;
-import static edu.lab1.encoder.Encoder.encodeAndGetCipherText;
+import static edu.lab1.decoder.Decoder.decodeAndGetPlaintext;
+import static edu.lab1.encoder.Encoder.encodeAndGetCiphertext;
 import static utils.PrintUtils.println;
 
 public final class Main {
@@ -19,9 +19,9 @@ public final class Main {
     private static void encoder() {
         var encoderDialogResult = EncoderDialog.startDialogAndGetResult();
 
-        String ciphertext = encodeAndGetCipherText(
+        String ciphertext = encodeAndGetCiphertext(
             encoderDialogResult.table(),
-            encoderDialogResult.plainText(),
+            encoderDialogResult.plaintext(),
             encoderDialogResult.key()
         );
 
@@ -33,14 +33,14 @@ public final class Main {
     private static void decoder() {
         var decoderDialogResult = DecoderDialog.startDialogAndGetResult();
 
-        String plainText = decodeAndGetPlainText(
+        String plaintext = decodeAndGetPlaintext(
             decoderDialogResult.table(),
-            decoderDialogResult.cipherText(),
+            decoderDialogResult.ciphertext(),
             decoderDialogResult.key()
         );
 
         println("");
-        println("Дешифрованный шифротекст: " + plainText);
+        println("Дешифрованный шифротекст: " + plaintext);
         println("");
     }
 
