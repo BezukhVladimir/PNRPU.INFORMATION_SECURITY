@@ -4,7 +4,7 @@ import edu.lab1.decoder.DecoderDialog;
 import edu.lab1.encoder.EncoderDialog;
 import static edu.lab1.decoder.Decoder.decodeAndGetPlaintext;
 import static edu.lab1.encoder.Encoder.encodeAndGetCiphertext;
-import static utils.PrintUtils.println;
+import static edu.utils.PrintUtils.println;
 
 public final class Main {
     private Main() {
@@ -25,7 +25,6 @@ public final class Main {
             encoderDialogResult.key()
         );
 
-        println("");
         println("Зашифрованный исходный текст: " + ciphertext);
         println("");
     }
@@ -39,9 +38,7 @@ public final class Main {
             decoderDialogResult.key()
         );
 
-        println("");
         println("Дешифрованный шифротекст: " + plaintext);
-        println("");
     }
 
     private static void printWelcomeMessage() {

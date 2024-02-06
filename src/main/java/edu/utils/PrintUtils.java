@@ -1,4 +1,4 @@
-package utils;
+package edu.utils;
 
 public final class PrintUtils {
     private PrintUtils() {

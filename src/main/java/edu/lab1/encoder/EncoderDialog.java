@@ -2,12 +2,12 @@ package edu.lab1.encoder;
 
 import edu.lab1.models.Table;
 import java.util.Scanner;
-import static utils.InputUtils.getScanner;
-import static utils.PrintUtils.print;
-import static utils.PrintUtils.println;
-import static utils.RandomUtils.getRandomSuffix;
-import static utils.UserInputUtils.getUserInput;
-import static utils.UserInputUtils.getUserPositiveInt;
+import static edu.utils.InputUtils.getScanner;
+import static edu.utils.PrintUtils.print;
+import static edu.utils.PrintUtils.println;
+import static edu.utils.RandomUtils.getRandomSuffix;
+import static edu.utils.UserInputUtils.getUserInput;
+import static edu.utils.UserInputUtils.getUserPositiveInt;
 
 public final class EncoderDialog {
     private EncoderDialog() {
@@ -60,6 +60,8 @@ public final class EncoderDialog {
             trimPlaintext();
         } else if (plaintext.length() < table.getSize()) {
             expandPlaintext();
+        } else {
+            println("");
         }
     }
 
@@ -91,6 +93,8 @@ public final class EncoderDialog {
             trimKey();
         } else if (key.length() < table.getWidth()) {
             expandKey();
+        } else {
+            println("");
         }
     }
 

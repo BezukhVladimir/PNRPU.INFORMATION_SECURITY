@@ -1,7 +1,6 @@
-package utils;
+package edu.utils;
 
 import java.util.Scanner;
-import static utils.PrintUtils.print;
 
 public final class UserInputUtils {
     private UserInputUtils() {
@@ -14,7 +13,7 @@ public final class UserInputUtils {
             if (positiveInteger > 0) {
                 return positiveInteger;
             } else {
-                print("Некорректный ввод. Введите целое число больше нуля: ");
+                PrintUtils.print("Некорректный ввод. Введите целое число больше нуля: ");
             }
         }
     }
@@ -24,7 +23,7 @@ public final class UserInputUtils {
             try {
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                print("Некорректный ввод. Введите целое число: ");
+                PrintUtils.print("Некорректный ввод. Введите целое число: ");
             }
         }
     }

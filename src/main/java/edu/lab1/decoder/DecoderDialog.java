@@ -2,11 +2,11 @@ package edu.lab1.decoder;
 
 import edu.lab1.models.Table;
 import java.util.Scanner;
-import static utils.InputUtils.getScanner;
-import static utils.PrintUtils.print;
-import static utils.PrintUtils.println;
-import static utils.UserInputUtils.getUserInput;
-import static utils.UserInputUtils.getUserPositiveInt;
+import static edu.utils.InputUtils.getScanner;
+import static edu.utils.PrintUtils.print;
+import static edu.utils.PrintUtils.println;
+import static edu.utils.UserInputUtils.getUserInput;
+import static edu.utils.UserInputUtils.getUserPositiveInt;
 
 public final class DecoderDialog {
     private DecoderDialog() {
@@ -46,6 +46,7 @@ public final class DecoderDialog {
             ciphertext = getUserInput(scanner);
 
             if (ciphertext.length() != table.getSize()) {
+                println("");
                 println("Шифротекст должен содержать " + table.getSize() + " символов. ");
                 print("Введите шифротекст: ");
             } else {
@@ -63,9 +64,11 @@ public final class DecoderDialog {
             key = getUserInput(scanner);
 
             if (key.length() != table.getWidth()) {
+                println("");
                 println("Ключ должен содержать " + table.getWidth() + " символов. ");
                 print("Введите ключ: ");
             } else {
+                println("");
                 break;
             }
         }
